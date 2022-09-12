@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <title>First Flask app</title>
+</head>
+<body>
+<div class="col-md-6 col-md-offset-3">
+<h1> Wheather MAP </h1>
+<form method="post" action="/">
+    <input type ="text" name="city" placeholder="Enter City Name">
+    <button type ="submit">SUBMIT</button>
+</form>
+    {% if data.status == 200 %}
+<div class="col-md-6 col-md-offset-3">
+<h3>temp:{{data.temp}}</h3>
+<h3>lat:{{data.lat}}</h3>
+<h3>lon:{{data.lon}}</h3>
+<h3>city:{{data.name}}</h3>
+<h3>sunrise:{{data.sunrise}}</h3>
+    {% elif data.status == 404 %}
+    <h3>city not found</h3>
+    {% else %}
+    {% endif %}
+</div>
+</body>
+</html>
