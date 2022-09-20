@@ -35,4 +35,4 @@ def wind():
         data = None
         return render_template("home.html", data=data)
 
-app.run()
+app.run(port=5001)
